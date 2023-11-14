@@ -7,6 +7,7 @@ const props = defineProps<{ tool: Tool }>();
 const toolStore = useToolStore();
 
 const { tool } = toRefs(props);
+const { t } = useI18n();
 
 const isFavorite = computed(() => toolStore.isToolFavorite({ tool }));
 const buttonType = computed(() => (isFavorite.value ? 'primary' : 'default'));
@@ -24,7 +25,7 @@ function toggleFavorite(event: MouseEvent) {
 </script>
 
 <template>
-  <c-tooltip :tooltip="isFavorite ? 'Remove from favorites' : 'Add to favorites' ">
+  <c-tooltip :tooltip="isFavorite ? t('tools.favorite.remove') : t('tools.favorite.add') ">
     <c-button
       variant="text"
       circle

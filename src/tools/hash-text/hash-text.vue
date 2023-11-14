@@ -5,7 +5,7 @@ import { MD5, RIPEMD160, SHA1, SHA224, SHA256, SHA3, SHA384, SHA512, enc } from 
 import InputCopyable from '../../components/InputCopyable.vue';
 import { convertHexToBin } from './hash-text.service';
 import { useQueryParam } from '@/composable/queryParams';
-
+const { t } = useI18n();
 const algos = {
   MD5,
   SHA1,
@@ -37,14 +37,15 @@ const hashText = (algo: AlgoNames, value: string) => formatWithEncoding(algos[al
 <template>
   <div>
     <c-card>
-      <c-input-text v-model:value="clearText" multiline raw-text placeholder="Your string to hash..." rows="3" autosize autofocus label="Your text to hash:" />
+      <c-input-text v-model:value="clearText" multiline raw-text :placeholder="t('tools.hash-text.input-placeholder')"
+                    rows="3" autosize autofocus :label="t('tools.hash-text.input-label')" />
 
       <n-divider />
 
       <c-select
         v-model:value="encoding"
         mb-4
-        label="Digest encoding"
+        :label="t('tools.hash-text.encoding-select-label')"
         :options="[
           {
             label: 'Binary (base 2)',

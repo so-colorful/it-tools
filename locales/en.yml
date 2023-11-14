@@ -63,3 +63,7 @@ tools:
     measurement: Measurement
     text: Text
     data: Data
+components:
+  input-copyable:
+    text1: 'Copied!'
+    text2: 'Copy to clipboard'

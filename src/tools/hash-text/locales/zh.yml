@@ -1,0 +1,7 @@
+tools:
+  hash-text:
+    title: '哈希文本'
+    description: '使用所需的函数对文本字符串进行散列：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3或RIPEMD160'
+    input-label: '需要哈希的文本：'
+    input-placeholder: '请输入需要哈希的字符串...'
+    encoding-select-label: '摘要编码'
