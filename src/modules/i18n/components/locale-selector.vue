@@ -1,13 +1,10 @@
 <script setup lang="ts">
-const { availableLocales, locale } = useI18n();
+const { locale } = useI18n();
+const availableLocales = ['zh', 'en']
 
 const localesLong: Record<string, string> = {
   zh: '中文',
-  en: 'English',
-  es: 'Español',
-  fr: 'Français',
-  pt: 'Português',
-  ru: 'Русский'
+  en: 'English'
 };
 
 const localeOptions = computed(() =>
