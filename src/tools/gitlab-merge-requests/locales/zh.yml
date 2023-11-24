@@ -1,0 +1,4 @@
+tools:
+  gitlab-merge-requests:
+    title: 'Gitlab合并请求'
+    description: 'Gitlab合并请求，支持批量启动、批量合并和查询合并记录。'

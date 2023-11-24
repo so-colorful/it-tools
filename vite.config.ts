@@ -20,6 +20,16 @@ const baseUrl = process.env.BASE_URL ?? '/';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      '/api/gitlab': { // 请求接口中要替换的标识
+        target: 'http://std.ebidding.com.cn:28080', // 代理地址
+        changeOrigin: true, // 是否允许跨域
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api\/gitlab/, '/api/v4') // api标志替换为''
+      }
+    }
+  },
   plugins: [
     VueI18n({
       runtimeOnly: true,
